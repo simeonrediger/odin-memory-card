@@ -1,0 +1,8 @@
+html {
+  --black: #000;
+  --dark-gray: #181818;
+  --white: #fff;
+
+  --color-app-bg: var(--dark-gray);
+  --color-app-text: var(--white);
+}
