@@ -1,8 +1,13 @@
 html {
   --black: #000;
   --dark-gray: #181818;
+  --gray: #383838;
+  --light-gray: #555;
   --white: #fff;
 
   --color-app-bg: var(--dark-gray);
   --color-app-text: var(--white);
+  --color-scoreboard-bg: var(--gray);
+  --color-scoreboard-text: var(--white);
+  --color-scoreboard-border: var(--light-gray);
 }
