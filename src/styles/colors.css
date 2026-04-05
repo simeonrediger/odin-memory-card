@@ -1,13 +1,14 @@
 html {
   --black: #000;
-  --dark-gray: #181818;
-  --gray: #383838;
-  --light-gray: #555;
+  --dark-gray-13: #181818;
+  --dark-gray-9: #383838;
+  --dark-gray-6: #555;
+  --gray: #888;
   --white: #fff;
 
-  --color-app-bg: var(--dark-gray);
+  --color-app-bg: var(--dark-gray-13);
   --color-app-text: var(--white);
-  --color-scoreboard-bg: var(--gray);
+  --color-scoreboard-bg: var(--dark-gray-9);
   --color-scoreboard-text: var(--white);
-  --color-scoreboard-border: var(--light-gray);
+  --color-scoreboard-border: var(--dark-gray-6);
 }
