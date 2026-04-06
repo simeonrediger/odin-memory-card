@@ -7,7 +7,6 @@
 
 .monster-name {
   color: var(--color-monster-name);
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-size: 1.1875rem;
   text-align: center;
 }
