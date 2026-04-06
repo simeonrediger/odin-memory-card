@@ -7,7 +7,7 @@ export default function Card({ name, image, description }) {
 
   return (
     <div className="card">
-      <div className="monster-name">{name}</div>
+      <h2 className="monster-name">{name}</h2>
       <img src={image}></img>
       <div>{description}</div>
     </div>
