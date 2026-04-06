@@ -2,12 +2,14 @@ import './Card.css';
 
 import { formatMonsterName } from './card-utils.js';
 
+import CardInfoButton from './CardInfoButton.jsx';
+
 export default function Card({
   id,
   name,
   image,
+  infoIconDataRole,
   description,
-  descriptionDataRole,
   descriptionShown,
 }) {
   name = formatMonsterName(name);
@@ -15,10 +17,17 @@ export default function Card({
   return (
     <div className="card" data-card-id={id}>
       <h2 className="card-title">{name}</h2>
-      <img src={image}></img>
-      <div data-role={descriptionDataRole}>
-        {descriptionShown ? description : 'Click to see more'}
+      <div className="card-image-and-info-button">
+        <img src={image}></img>
+        <CardInfoButton
+          dataRole={infoIconDataRole}
+          className="card-info-button"
+          label="Show description"
+          width="28"
+          height="28"
+        />
       </div>
+      <div>{descriptionShown && description}</div>
     </div>
   );
 }

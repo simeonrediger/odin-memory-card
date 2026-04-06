@@ -7,7 +7,7 @@ import { getRandomMonsterData } from './features/cards/card-utils.js';
 import Card from './features/cards/Card.jsx';
 import Scoreboard from './features/scoreboard/Scoreboard.jsx';
 
-const descriptionDataRole = 'description';
+const cardInfoIconDataRole = 'card-info-icon';
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -21,11 +21,11 @@ function App() {
   }, []);
 
   function handleClick(event) {
-    const descriptionClicked = Boolean(
-      event.target.closest(`[data-role="${descriptionDataRole}"]`),
+    const cardInfoIconClicked = Boolean(
+      event.target.closest(`[data-role="${cardInfoIconDataRole}"]`),
     );
 
-    if (descriptionClicked) {
+    if (cardInfoIconClicked) {
       handleDescriptionClick(event);
     }
   }
@@ -45,7 +45,7 @@ function App() {
           <li key={cardData.id}>
             <Card
               {...cardData}
-              descriptionDataRole={descriptionDataRole}
+              infoIconDataRole={cardInfoIconDataRole}
               descriptionShown={cardData.id === shownDescriptionId}
             />
           </li>
