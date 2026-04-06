@@ -2,14 +2,23 @@ import './Card.css';
 
 import formatMonsterName from './format-monster-name.js';
 
-export default function Card({ name, image, description }) {
+export default function Card({
+  id,
+  name,
+  image,
+  description,
+  descriptionDataRole,
+  descriptionShown,
+}) {
   name = formatMonsterName(name);
 
   return (
-    <div className="card">
+    <div className="card" data-card-id={id}>
       <h2 className="card-title">{name}</h2>
       <img src={image}></img>
-      <div>{description}</div>
+      <div data-role={descriptionDataRole}>
+        {descriptionShown ? description : 'Click to see more'}
+      </div>
     </div>
   );
 }
