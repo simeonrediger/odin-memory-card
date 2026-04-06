@@ -32,7 +32,8 @@ function App() {
 
   function handleDescriptionClick(event) {
     const cardId = +event.target.closest('[data-card-id]').dataset.cardId;
-    setShownDescriptionId(cardId);
+    const sameCard = cardId === shownDescriptionId;
+    setShownDescriptionId(sameCard ? null : cardId);
   }
 
   return (
