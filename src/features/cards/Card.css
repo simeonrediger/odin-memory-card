@@ -22,6 +22,10 @@
   justify-content: center;
 }
 
+.card-image {
+  aspect-ratio: 1;
+}
+
 .card-info-button {
   position: absolute;
   bottom: 6px;
