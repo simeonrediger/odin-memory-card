@@ -5,6 +5,11 @@
   padding: 1rem 2rem;
 }
 
+.page-title {
+  color: var(--color-page-title);
+  text-wrap-style: balance;
+}
+
 .cards {
   margin-block: 2rem;
 

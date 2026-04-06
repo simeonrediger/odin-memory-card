@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1 className="page-title">Hyrule Memory Game</h1>
       <Scoreboard currentScore={currentScore} highScore={highScore} />
       <ul className="cards">
         {cards.map(card => (

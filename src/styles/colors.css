@@ -15,6 +15,7 @@ html {
   --color-card-bg: var(--dark-gray-15);
   --color-card-border: var(--dark-gold);
   --color-monster-name: var(--gold);
+  --color-page-title: var(--gold);
   --color-scoreboard-bg: var(--dark-gray-9);
   --color-scoreboard-text: var(--white);
   --color-scoreboard-border: var(--dark-gray-6);
