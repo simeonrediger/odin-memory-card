@@ -4,3 +4,10 @@
   border-radius: 1rem;
   padding: 1rem;
 }
+
+.monster-name {
+  color: var(--color-monster-name);
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: center;
+}
