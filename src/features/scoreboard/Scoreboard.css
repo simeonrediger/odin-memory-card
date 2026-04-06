@@ -12,6 +12,12 @@
   text-align: right;
 }
 
+@media (width <= 480px) {
+  .scoreboard th {
+    width: min-content;
+  }
+}
+
 .scoreboard td {
   width: 2.25rem;
   vertical-align: bottom;
