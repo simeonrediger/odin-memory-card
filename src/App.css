@@ -3,6 +3,11 @@
   color: var(--color-app-text);
   min-height: 100vh;
   padding: 1rem 2rem;
+}
+
+.app-content {
+  margin-inline: auto;
+  max-width: 95rem;
 
   display: grid;
   grid-template-areas:

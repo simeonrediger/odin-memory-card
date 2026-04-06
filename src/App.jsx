@@ -38,19 +38,21 @@ function App() {
 
   return (
     <div className="app" onClick={handleClick}>
-      <h1 className="page-title">Hyrule Memory Game</h1>
-      <Scoreboard currentScore={currentScore} highScore={highScore} />
-      <ul className="cards">
-        {cardDataList.map(cardData => (
-          <li key={cardData.id}>
-            <Card
-              {...cardData}
-              infoIconDataRole={cardInfoIconDataRole}
-              descriptionShown={cardData.id === shownDescriptionId}
-            />
-          </li>
-        ))}
-      </ul>
+      <div className="app-content">
+        <h1 className="page-title">Hyrule Memory Game</h1>
+        <Scoreboard currentScore={currentScore} highScore={highScore} />
+        <ul className="cards">
+          {cardDataList.map(cardData => (
+            <li key={cardData.id}>
+              <Card
+                {...cardData}
+                infoIconDataRole={cardInfoIconDataRole}
+                descriptionShown={cardData.id === shownDescriptionId}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
