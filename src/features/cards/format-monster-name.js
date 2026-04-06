@@ -4,10 +4,10 @@ export default function formatMonsterName(name) {
 }
 
 function formatWord(word) {
-  // All Roman numerals in the current data do not exceed IV.
+  // As of 2026-04-05, all Roman numerals in the data do not exceed IV.
   const isRomanNumeral = ['i', 'ii', 'iii', 'iv'].includes(word);
 
-  // All parentheticals in the current data contain a single word.
+  // As of 2026-04-05, all parentheticals in the data contain a single word.
   const isParenthetical = word.startsWith('(') && word.endsWith(')');
 
   if (isRomanNumeral) {
