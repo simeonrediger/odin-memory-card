@@ -1,6 +1,16 @@
-export default function formatMonsterName(name) {
+export function formatMonsterName(name) {
   const words = name.split(' ');
   return words.map(formatWord).join(' ');
+}
+
+export async function getRandomMonsterData(monsterCount) {
+  const allMonsterData = await fetch(
+    'https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters',
+  )
+    .then(response => response.json())
+    .then(data => data.data);
+
+  return getRandomSample(allMonsterData, monsterCount);
 }
 
 function formatWord(word) {
@@ -21,4 +31,17 @@ function formatWord(word) {
 
 function capitalizeFirstLetter(string) {
   return string[0].toUpperCase() + string.slice(1);
+}
+
+function getRandomSample(array, n) {
+  array = [...array];
+  const randomSample = [];
+
+  for (let i = 0; i < n; i++) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    randomSample.push(array[randomIndex]);
+    array.splice(randomIndex, 1);
+  }
+
+  return randomSample;
 }

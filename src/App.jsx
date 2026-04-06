@@ -2,7 +2,7 @@ import './App.css';
 
 import { useEffect, useState } from 'react';
 
-import getRandomMonsterData from './features/cards/get-random-monster-data.js';
+import { getRandomMonsterData } from './features/cards/card-utils.js';
 
 import Card from './features/cards/Card.jsx';
 import Scoreboard from './features/scoreboard/Scoreboard.jsx';

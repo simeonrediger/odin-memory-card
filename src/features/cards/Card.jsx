@@ -1,6 +1,6 @@
 import './Card.css';
 
-import formatMonsterName from './format-monster-name.js';
+import { formatMonsterName } from './card-utils.js';
 
 export default function Card({
   id,
