@@ -20,7 +20,7 @@ function App() {
     getRandomMonsterData(cardCount).then(setCardDataList);
   }, []);
 
-  function handleClick(event) {
+  function handleCardsClick(event) {
     const cardInfoIconClicked = Boolean(
       event.target.closest(`[data-role="${cardInfoIconDataRole}"]`),
     );
@@ -37,11 +37,11 @@ function App() {
   }
 
   return (
-    <div className="app" onClick={handleClick}>
+    <div className="app">
       <div className="app-content">
         <h1 className="page-title">Hyrule Memory Game</h1>
         <Scoreboard currentScore={currentScore} highScore={highScore} />
-        <ul className="cards">
+        <ul className="cards" onClick={handleCardsClick}>
           {cardDataList.map(cardData => (
             <li key={cardData.id}>
               <Card
