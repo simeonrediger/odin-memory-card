@@ -13,6 +13,7 @@
 
 .page-title {
   color: var(--color-page-title);
+  font-size: clamp(1.25rem, 5vw, 2rem);
   grid-area: title;
   text-wrap-style: balance;
 }
