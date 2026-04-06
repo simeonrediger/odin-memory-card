@@ -1,13 +1,18 @@
 html {
   --black: #000;
+  --dark-gray-15: #080808;
   --dark-gray-13: #181818;
   --dark-gray-9: #383838;
   --dark-gray-6: #555;
   --gray: #888;
   --white: #fff;
 
+  --dark-gold: #947e26;
+
   --color-app-bg: var(--dark-gray-13);
   --color-app-text: var(--white);
+  --color-card-bg: var(--dark-gray-15);
+  --color-card-border: var(--dark-gold);
   --color-scoreboard-bg: var(--dark-gray-9);
   --color-scoreboard-text: var(--white);
   --color-scoreboard-border: var(--dark-gray-6);
