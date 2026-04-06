@@ -10,11 +10,11 @@ import Scoreboard from './features/scoreboard/Scoreboard.jsx';
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-  const [cards, setCards] = useState([]);
+  const [cardDataList, setCardDataList] = useState([]);
 
   useEffect(() => {
     const cardCount = 12;
-    getRandomMonsterData(cardCount).then(setCards);
+    getRandomMonsterData(cardCount).then(setCardDataList);
   }, []);
 
   return (
@@ -22,9 +22,9 @@ function App() {
       <h1 className="page-title">Hyrule Memory Game</h1>
       <Scoreboard currentScore={currentScore} highScore={highScore} />
       <ul className="cards">
-        {cards.map(card => (
-          <li key={card.id}>
-            <Card {...card} />
+        {cardDataList.map(cardData => (
+          <li key={cardData.id}>
+            <Card {...cardData} />
           </li>
         ))}
       </ul>

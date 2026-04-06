@@ -9,8 +9,8 @@
   gap: 0.75rem;
 }
 
-.monster-name {
-  color: var(--color-monster-name);
+.card-title {
+  color: var(--color-card-title);
   font-size: 1.1875rem;
   text-align: center;
 }

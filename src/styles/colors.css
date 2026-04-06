@@ -14,7 +14,7 @@ html {
   --color-app-text: var(--white);
   --color-card-bg: var(--dark-gray-15);
   --color-card-border: var(--dark-gold);
-  --color-monster-name: var(--gold);
+  --color-card-title: var(--gold);
   --color-page-title: var(--gold);
   --color-scoreboard-bg: var(--dark-gray-9);
   --color-scoreboard-text: var(--white);
