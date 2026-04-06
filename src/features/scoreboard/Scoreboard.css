@@ -4,6 +4,8 @@
   border-radius: 0.5rem;
   border-spacing: 1rem 0.75rem;
   color: var(--color-scoreboard-text);
+  grid-area: scoreboard;
+  justify-self: end;
 }
 
 .scoreboard th {

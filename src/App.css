@@ -3,14 +3,21 @@
   color: var(--color-app-text);
   min-height: 100vh;
   padding: 1rem 2rem;
+
+  display: grid;
+  grid-template-areas:
+    'title scoreboard'
+    'cards cards     ';
 }
 
 .page-title {
   color: var(--color-page-title);
+  grid-area: title;
   text-wrap-style: balance;
 }
 
 .cards {
+  grid-area: cards;
   margin-block: 2rem;
 
   display: grid;
