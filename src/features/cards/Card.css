@@ -17,6 +17,9 @@
 
 .card-image-and-info-button {
   position: relative;
+
+  display: flex;
+  justify-content: center;
 }
 
 .card-info-button {
