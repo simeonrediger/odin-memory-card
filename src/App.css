@@ -12,6 +12,17 @@
   gap: 2rem;
 }
 
+@media (width <= 480px) {
+  .app {
+    padding: 0;
+  }
+
+  .page-title {
+    margin-inline-start: 2rem;
+    margin-top: 1rem;
+  }
+}
+
 .page-title {
   color: var(--color-page-title);
   font-size: clamp(1.25rem, 5vw, 2rem);
