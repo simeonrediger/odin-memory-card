@@ -1,4 +1,8 @@
 .card {
+  position: relative;
+}
+
+.card-hitbox {
   background-color: var(--color-card-bg);
   border: 2px solid var(--color-card-border);
   border-radius: 1rem;
@@ -15,28 +19,32 @@
   text-align: center;
 }
 
-.card-image-and-info-button {
-  position: relative;
+.card-image {
+  aspect-ratio: 1;
+}
+
+.toggle-more-button {
+  position: absolute;
+  inset-inline-start: 50%;
+  translate: -50% -2px;
+  z-index: 1;
+
+  background-color: var(--color-toggle-more-button-bg);
+  color: var(--color-toggle-more-button-fg);
+  border: 2px solid var(--color-card-border);
+  border-end-end-radius: 1rem;
+  border-end-start-radius: 1rem;
+  border-top: none;
+  width: 4rem;
 
   display: flex;
   justify-content: center;
 }
 
-.card-image {
-  aspect-ratio: 1;
+.toggle-more-button:hover {
+  color: var(--color-toggle-more-button-fg-hover);
 }
 
-.card-info-button {
-  position: absolute;
-  bottom: 6px;
-  inset-inline-end: 6px;
-
-  background-color: var(--color-card-info-button-fg);
-  color: var(--color-card-info-button-fg);
-  border-radius: 1rem;
-}
-
-.card-info-button:hover {
-  background-color: var(--color-card-info-button-fg-hover);
-  color: var(--color-card-info-button-fg-hover);
+.card:not(:hover) .toggle-more-button {
+  display: none;
 }
