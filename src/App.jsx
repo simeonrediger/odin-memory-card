@@ -11,6 +11,7 @@ function App() {
   const [cardDataList, setCardDataList] = useState([]);
   const [shownDescriptionId, setShownDescriptionId] = useState(null);
 
+  const [memorizedCardIds, setMemorizedCardIds] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
@@ -22,12 +23,28 @@ function App() {
   function handleCardClick(cardId, toggleMoreClicked) {
     if (toggleMoreClicked) {
       handleToggleMoreClick(cardId);
+    } else {
+      addToMemory(cardId);
     }
   }
 
   function handleToggleMoreClick(cardId) {
     const sameCard = cardId === shownDescriptionId;
     setShownDescriptionId(sameCard ? null : cardId);
+  }
+
+  function addToMemory(cardId) {
+    if (memorizedCardIds.includes(cardId)) {
+      // TODO
+    } else {
+      setMemorizedCardIds([...memorizedCardIds, cardId]);
+      const newCurrentScore = currentScore + 1;
+      setCurrentScore(newCurrentScore);
+
+      if (newCurrentScore > highScore) {
+        setHighScore(newCurrentScore);
+      }
+    }
   }
 
   return (
