@@ -9,6 +9,8 @@ html {
 
   --gold: #e8c94e;
   --dark-gold: #947e26;
+  --green: #2f5a2f;
+  --red: rgb(133, 65, 65);
 
   --color-app-bg: var(--dark-gray-13);
   --color-app-text: var(--white);
@@ -21,6 +23,8 @@ html {
   --color-card-title-hover: var(--gold);
   --color-page-title: var(--gold);
   --color-scoreboard-bg: var(--dark-gray-9);
+  --color-scoreboard-bg-success: var(--green);
+  --color-scoreboard-bg-failure: var(--red);
   --color-scoreboard-text: var(--white);
   --color-scoreboard-border: var(--dark-gray-6);
 }

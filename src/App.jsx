@@ -17,6 +17,7 @@ function App() {
   const [memorizedCardIds, setMemorizedCardIds] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [scoreDelta, setScoreDelta] = useState(0);
 
   useEffect(() => {
     const cardCount = 12;
@@ -53,6 +54,7 @@ function App() {
 
   function updateScores(newCurrentScore) {
     setCurrentScore(newCurrentScore);
+    setScoreDelta(newCurrentScore - currentScore);
 
     if (newCurrentScore > highScore) {
       setHighScore(newCurrentScore);
@@ -68,7 +70,11 @@ function App() {
     <div className="app">
       <div className="app-content">
         <h1 className="page-title">Hyrule Memory Game</h1>
-        <Scoreboard currentScore={currentScore} highScore={highScore} />
+        <Scoreboard
+          currentScore={currentScore}
+          highScore={highScore}
+          scoreDelta={scoreDelta}
+        />
         <ul className="cards">
           {cardDataList.map(cardData => (
             <li key={cardData.id}>

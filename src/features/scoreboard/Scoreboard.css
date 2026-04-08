@@ -8,6 +8,14 @@
   justify-self: end;
 }
 
+.scoreboard.score-increased {
+  background-color: var(--color-scoreboard-bg-success);
+}
+
+.scoreboard.score-decreased {
+  background-color: var(--color-scoreboard-bg-failure);
+}
+
 .scoreboard th {
   text-align: right;
 }
