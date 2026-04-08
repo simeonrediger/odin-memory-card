@@ -27,7 +27,7 @@ function App() {
     if (toggleMoreClicked) {
       handleToggleMoreClick(cardId);
     } else {
-      addToMemory(cardId);
+      handlePlay(cardId);
       randomizeCardOrder();
     }
   }
@@ -37,18 +37,25 @@ function App() {
     setShownDescriptionId(sameCard ? null : cardId);
   }
 
-  function addToMemory(cardId) {
+  function handlePlay(cardId) {
     if (memorizedCardIds.includes(cardId)) {
-      setMemorizedCardIds([]);
-      setCurrentScore(0);
+      resetGame();
     } else {
       setMemorizedCardIds([...memorizedCardIds, cardId]);
-      const newCurrentScore = currentScore + 1;
-      setCurrentScore(newCurrentScore);
+      updateScores(currentScore + 1);
+    }
+  }
 
-      if (newCurrentScore > highScore) {
-        setHighScore(newCurrentScore);
-      }
+  function resetGame() {
+    setMemorizedCardIds([]);
+    updateScores(0);
+  }
+
+  function updateScores(newCurrentScore) {
+    setCurrentScore(newCurrentScore);
+
+    if (newCurrentScore > highScore) {
+      setHighScore(newCurrentScore);
     }
   }
 
