@@ -50,7 +50,7 @@
   color: var(--color-toggle-more-button-fg-hover);
 }
 
-.card:not(:hover, .description-shown) .toggle-more-button {
+.card:not(:hover, :focus-within, .description-shown) .toggle-more-button {
   display: none;
 }
 
