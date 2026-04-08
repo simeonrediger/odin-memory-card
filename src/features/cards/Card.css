@@ -13,7 +13,7 @@
   gap: 0.75rem;
 }
 
-.card-hitbox:hover .card-title {
+.card-hitbox:is(:hover, :focus) .card-title {
   color: var(--color-card-title-hover);
   scale: 1.05;
   transition-property: color, scale;
