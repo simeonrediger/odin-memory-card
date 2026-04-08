@@ -17,7 +17,8 @@ html {
   --color-toggle-more-button-bg: var(--color-card-bg);
   --color-toggle-more-button-fg: var(--white);
   --color-toggle-more-button-fg-hover: var(--gold);
-  --color-card-title: var(--gold);
+  --color-card-title: var(--color-app-text);
+  --color-card-title-hover: var(--gold);
   --color-page-title: var(--gold);
   --color-scoreboard-bg: var(--dark-gray-9);
   --color-scoreboard-text: var(--white);

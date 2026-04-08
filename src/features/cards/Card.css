@@ -14,8 +14,10 @@
 }
 
 .card-hitbox:hover .card-title {
-  transition: scale 0.25s;
+  color: var(--color-card-title-hover);
   scale: 1.05;
+  transition-property: color, scale;
+  transition-duration: 0.25s;
 }
 
 .card.description-shown .card-hitbox {
