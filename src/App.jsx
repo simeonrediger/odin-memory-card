@@ -8,10 +8,11 @@ import Card from './features/cards/Card.jsx';
 import Scoreboard from './features/scoreboard/Scoreboard.jsx';
 
 function App() {
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
   const [cardDataList, setCardDataList] = useState([]);
   const [shownDescriptionId, setShownDescriptionId] = useState(null);
+
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     const cardCount = 12;
