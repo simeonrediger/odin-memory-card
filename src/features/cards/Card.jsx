@@ -14,10 +14,16 @@ export default function Card({
   description,
   descriptionShown,
 }) {
+  let className = 'card';
+
+  if (descriptionShown) {
+    className += ' description-shown';
+  }
+
   name = formatMonsterName(name);
 
   return (
-    <div className="card" data-card-id={id}>
+    <div className={className} data-card-id={id}>
       <button className="card-hitbox">
         <h2 className="card-title">{name}</h2>
         <img className="card-image" src={image} width={monsterImageSize} />
@@ -29,7 +35,9 @@ export default function Card({
         width="28"
         height="28"
       />
-      {descriptionShown && <div>{description}</div>}
+      {descriptionShown && (
+        <div className="card-description">{description}</div>
+      )}
     </div>
   );
 }

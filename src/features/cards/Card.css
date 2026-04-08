@@ -13,6 +13,11 @@
   gap: 0.75rem;
 }
 
+.card.description-shown .card-hitbox {
+  border-bottom: none;
+  border-radius: 1rem 1rem 0 0;
+}
+
 .card-title {
   color: var(--color-card-title);
   font-size: 1.1875rem;
@@ -45,6 +50,33 @@
   color: var(--color-toggle-more-button-fg-hover);
 }
 
-.card:not(:hover) .toggle-more-button {
+.card:not(:hover, .description-shown) .toggle-more-button {
   display: none;
+}
+
+.card.description-shown .toggle-more-button {
+  border-bottom: none;
+  border-radius: 0;
+  padding-top: 2px;
+  width: 100%;
+}
+
+.toggle-more-icon {
+  transition: scale 0.25s;
+}
+
+.card.description-shown .toggle-more-icon {
+  scale: 1 -1;
+}
+
+.card-description {
+  position: absolute;
+  translate: 0 26px;
+  z-index: 1;
+
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-card-border);
+  border-top: none;
+  border-radius: 0 0 1rem 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
