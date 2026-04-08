@@ -13,6 +13,19 @@ export async function getRandomMonsterData(monsterCount) {
   return getRandomSample(allMonsterData, monsterCount);
 }
 
+export function getRandomSample(array, n = array.length) {
+  array = [...array];
+  const randomSample = [];
+
+  for (let i = 0; i < n; i++) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    randomSample.push(array[randomIndex]);
+    array.splice(randomIndex, 1);
+  }
+
+  return randomSample;
+}
+
 function formatWord(word) {
   // As of 2026-04-05, all Roman numerals in the data do not exceed IV.
   const isRomanNumeral = ['i', 'ii', 'iii', 'iv'].includes(word);
@@ -31,17 +44,4 @@ function formatWord(word) {
 
 function capitalizeFirstLetter(string) {
   return string[0].toUpperCase() + string.slice(1);
-}
-
-function getRandomSample(array, n) {
-  array = [...array];
-  const randomSample = [];
-
-  for (let i = 0; i < n; i++) {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    randomSample.push(array[randomIndex]);
-    array.splice(randomIndex, 1);
-  }
-
-  return randomSample;
 }

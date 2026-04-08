@@ -2,7 +2,10 @@ import './App.css';
 
 import { useEffect, useState } from 'react';
 
-import { getRandomMonsterData } from './features/cards/card-utils.js';
+import {
+  getRandomMonsterData,
+  getRandomSample,
+} from './features/cards/card-utils.js';
 
 import Card from './features/cards/Card.jsx';
 import Scoreboard from './features/scoreboard/Scoreboard.jsx';
@@ -25,6 +28,7 @@ function App() {
       handleToggleMoreClick(cardId);
     } else {
       addToMemory(cardId);
+      randomizeCardOrder();
     }
   }
 
@@ -46,6 +50,11 @@ function App() {
         setHighScore(newCurrentScore);
       }
     }
+  }
+
+  function randomizeCardOrder() {
+    const randomizedCardDataList = getRandomSample([...cardDataList]);
+    setCardDataList(randomizedCardDataList);
   }
 
   return (
