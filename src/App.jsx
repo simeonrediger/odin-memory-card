@@ -35,7 +35,8 @@ function App() {
 
   function addToMemory(cardId) {
     if (memorizedCardIds.includes(cardId)) {
-      // TODO
+      setMemorizedCardIds([]);
+      setCurrentScore(0);
     } else {
       setMemorizedCardIds([...memorizedCardIds, cardId]);
       const newCurrentScore = currentScore + 1;
