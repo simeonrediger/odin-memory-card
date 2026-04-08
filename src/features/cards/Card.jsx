@@ -10,8 +10,8 @@ export default function Card({
   id,
   name,
   image,
-  infoIconDataRole,
   description,
+  onClick,
   descriptionShown,
 }) {
   let className = 'card';
@@ -22,18 +22,30 @@ export default function Card({
 
   name = formatMonsterName(name);
 
+  function handleClick(toggleMoreClicked) {
+    onClick(id, toggleMoreClicked);
+  }
+
+  function handleCardClick() {
+    handleClick(false);
+  }
+
+  function handleToggleMoreClick() {
+    handleClick(true);
+  }
+
   return (
-    <div className={className} data-card-id={id}>
-      <button className="card-hitbox">
+    <div className={className}>
+      <button className="card-hitbox" onClick={handleCardClick}>
         <h2 className="card-title">{name}</h2>
         <img className="card-image" src={image} width={monsterImageSize} />
       </button>
       <ToggleMoreButton
-        dataRole={infoIconDataRole}
         className="toggle-more-button"
         label="Show description"
         width="28"
         height="28"
+        onClick={handleToggleMoreClick}
       />
       <div className="card-description">{description}</div>
     </div>

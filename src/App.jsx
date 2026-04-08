@@ -7,8 +7,6 @@ import { getRandomMonsterData } from './features/cards/card-utils.js';
 import Card from './features/cards/Card.jsx';
 import Scoreboard from './features/scoreboard/Scoreboard.jsx';
 
-const cardInfoIconDataRole = 'card-info-icon';
-
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -20,18 +18,13 @@ function App() {
     getRandomMonsterData(cardCount).then(setCardDataList);
   }, []);
 
-  function handleCardsClick(event) {
-    const cardInfoIconClicked = Boolean(
-      event.target.closest(`[data-role="${cardInfoIconDataRole}"]`),
-    );
-
-    if (cardInfoIconClicked) {
-      handleDescriptionClick(event);
+  function handleCardClick(cardId, toggleMoreClicked) {
+    if (toggleMoreClicked) {
+      handleToggleMoreClick(cardId);
     }
   }
 
-  function handleDescriptionClick(event) {
-    const cardId = +event.target.closest('[data-card-id]').dataset.cardId;
+  function handleToggleMoreClick(cardId) {
     const sameCard = cardId === shownDescriptionId;
     setShownDescriptionId(sameCard ? null : cardId);
   }
@@ -41,12 +34,12 @@ function App() {
       <div className="app-content">
         <h1 className="page-title">Hyrule Memory Game</h1>
         <Scoreboard currentScore={currentScore} highScore={highScore} />
-        <ul className="cards" onClick={handleCardsClick}>
+        <ul className="cards">
           {cardDataList.map(cardData => (
             <li key={cardData.id}>
               <Card
                 {...cardData}
-                infoIconDataRole={cardInfoIconDataRole}
+                onClick={handleCardClick}
                 descriptionShown={cardData.id === shownDescriptionId}
               />
             </li>

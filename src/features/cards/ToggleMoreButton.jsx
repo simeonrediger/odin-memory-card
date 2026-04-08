@@ -1,12 +1,12 @@
 export default function ToggleMoreButton({
-  dataRole,
   className,
   label,
   width,
   height,
+  onClick,
 }) {
   return (
-    <button data-role={dataRole} className={className}>
+    <button className={className} onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
