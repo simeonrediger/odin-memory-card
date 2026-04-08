@@ -35,9 +35,7 @@ export default function Card({
         width="28"
         height="28"
       />
-      {descriptionShown && (
-        <div className="card-description">{description}</div>
-      )}
+      <div className="card-description">{description}</div>
     </div>
   );
 }

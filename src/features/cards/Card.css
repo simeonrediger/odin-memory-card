@@ -32,7 +32,7 @@
   position: absolute;
   inset-inline-start: 50%;
   translate: -50% -2px;
-  z-index: 1;
+  z-index: 2;
 
   background-color: var(--color-toggle-more-button-bg);
   border: 2px solid var(--color-card-border);
@@ -79,4 +79,15 @@
   border-top: none;
   border-radius: 0 0 1rem 1rem;
   padding: 0 1rem 1rem 1rem;
+
+  transition-property: background-color, border-color, color, scale;
+  transition-duration: 0.25s;
+  transform-origin: 0% -30px;
+}
+
+.card:not(.description-shown) .card-description {
+  background-color: transparent;
+  border-color: transparent;
+  color: transparent;
+  scale: 1 0;
 }
