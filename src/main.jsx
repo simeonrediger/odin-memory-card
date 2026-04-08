@@ -1,5 +1,5 @@
-import './styles/reset.css';
-import './styles/colors.css';
+import './shared/styles/reset.css';
+import './shared/styles/colors.css';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
